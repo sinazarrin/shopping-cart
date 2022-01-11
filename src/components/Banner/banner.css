@@ -1,0 +1,150 @@
+.banner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url('./images/joran-quinten-vtiYZsVmC2A-unsplash.jpg');
+    background-size: cover;
+}
+
+.content-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    width: 57%;
+}
+
+.title-banner {
+    font-size: 6em;
+    /* letter-spacing: 40px; */
+    color: #0e3742;
+    text-transform: uppercase;
+    width: 100%;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+    line-height: 0.70em;
+    outline: none;
+    animation: animate 5s linear infinite;
+    cursor: context-menu;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+@keyframes animate {
+
+    0%,
+    18%,
+    20%,
+    50.1%,
+    60%,
+    65.1%,
+    80%,
+    90.1%,
+    92% {
+        color: transparent;
+        text-shadow: none;
+    }
+
+    18.1%,
+    20.1%,
+    30%,
+    50%,
+    60.1%,
+    65%,
+    80.1%,
+    90%,
+    92.1%,
+    100% {
+        color: #2196f3;
+        text-shadow: 0 0 10px #2196f3,
+            0 0 25px #2196f3,
+            0 0 40px #2196f3,
+            0 0 80px #2196f3,
+            0 0 160px #2196f3
+    }
+}
+
+.subTitle-banner {
+    color: #fff;
+    line-height: 2;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.search-banner {
+    display: flex;
+    justify-content: center;
+    padding-top: 45px;
+}
+
+.search-from {
+    position: relative;
+    width: 370px;
+    display: flex;
+}
+
+.search-field {
+    width: 100%;
+    display: block;
+    -webkit-border-radius: 50px;
+    line-height: 50px;
+    height: 42px;
+    padding: 0 20px;
+    font-size: 15px;
+    color: #1e2f38;
+    border: 0;
+    outline: none;
+}
+
+.search-submit {
+    font-size: 25px;
+    color: #00bffe;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    width: 50px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1024px) {
+
+    .content-banner {
+        width: 90%;
+    }
+
+    .subTitle-banner {
+        line-height: 2.3;
+        font-size: 15px;
+    }
+
+    /* .title-banner {
+        font-size: 4em;
+    } */
+}
+
+@media screen and (max-width:576px) {
+
+    .title-banner {
+        font-size: 4em;
+    }
+
+    .subTitle-banner {
+        line-height: 2.3;
+        font-size: 15px;
+    }
+
+    
+}
+
+@media screen and (max-width:375px){
+    .title-banner{
+        font-size: 4rem;
+    }
+}

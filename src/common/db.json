@@ -1,0 +1,43 @@
+{
+    "products": [{
+            "id": "1",
+            "title": "هودی مردانه طرخ ساده مشکی",
+            "images": ["../images/hoodie-black1.jpg", "../images/hoodie-black2.jpg", "../images/hoodie-black3.jpg"],
+            "price": 99000,
+            "productStatus": "موجود",
+            "score": 5,
+            "color":"مشکی",
+            "qty": 0
+        },
+        {
+            "id": "2",
+            "title": "هودی مردانه طرح شیکاگو بالز",
+            "images": ["../images/hoodie-chicago-bulls1.jpg", "../images/hoodie-chicago-bulls2.jpg", "../images/hoodie-chicago-bulls3.jpg"],
+            "price": 170000,
+            "productStatus": "موجود",
+            "score": 5,
+            "color":"مشکی",
+            "qty": 0
+        },
+        {
+            "id": "3",
+            "title": "هودی مردانه طرح ساده زرد",
+            "images": ["../images/hoodie-yellow1.jpg", "../images/hoodie-yellow2.jpg", "../images/hoodie-yellow3.jpg"],
+            "price": 209000,
+            "productStatus": "موجود",
+            "score": 5,
+            "color":"زرد",
+            "qty": 0
+        },
+        {
+            "id": "4",
+            "title": "شلوار مردانه طرخ اسلش",
+            "images": ["../images/pants-man-black-slash1.jpg", "../images/pants-man-black-slash2.jpg", "../images/pants-man-black-slash3.jpg"],
+            "price": 130000,
+            "productStatus": "موجود",
+            "score": 5,
+            "color":"مشکی",
+            "qty": 0
+        }
+    ]
+}

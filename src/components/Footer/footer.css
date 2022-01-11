@@ -1,0 +1,17 @@
+footer {
+    background-color: #302f2f;
+    height: 100%;
+}
+
+.copy-right-foot {
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    padding: 40px 0;
+    display: block;
+}
+
+.builders {
+    text-decoration: none;
+    color: rgb(255, 208, 0);
+}

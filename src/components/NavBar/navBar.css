@@ -1,0 +1,204 @@
+header {
+  display: flex;
+  justify-content: center;
+}
+
+
+.content-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 75px;
+  position: fixed;
+  background-color: #09111d;
+  z-index: 1;
+}
+
+.header-item {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 24px;
+  color: #fff;
+}
+
+.login-slice {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  align-items: center;
+}
+
+.login {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.5s;
+}
+
+.login:hover {
+  color: #008fcd;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.5s;
+}
+
+.sign-up:hover {
+  color: #2196f3;
+}
+
+.user-icon {
+  margin-left: 10px;
+}
+
+.space-login {
+  margin: 0 7px;
+}
+
+.middle-span {
+  margin: 0 15px;
+}
+
+.basket-icon>a {
+  color: #fff;
+}
+
+.nav-item {
+  display: flex;
+}
+
+.nav-item>ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item>ul>li>a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+.nav-item ul li {
+  margin: 0 0 0 45px;
+  position: relative;
+}
+
+.nav-item ul li::after {
+  content: '';
+  height: 3px;
+  width: 0%;
+  background: #2196f3;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: all 0.5s;
+}
+
+.nav-item ul li:hover::after {
+  width: 100%;
+}
+
+.logo>h1>a {
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.logo>h1{
+  font-size: 30px;
+}
+/* svg {
+  margin-left: 7px;
+} */
+
+.menu-berger{
+  color: #fff;
+  cursor: pointer;
+}
+
+@media screen and (max-width:4000px) {
+  .menu-berger {
+    display: none;
+  }
+}
+
+@media screen and (max-width:1024px) {
+
+
+  .nav-item>ul>li {
+    margin: 0 0 0 25px;
+  }
+
+  .nav-item>ul>li>a {
+    font-size: 13px;
+  }
+
+  .logo>h1 {
+    font-size: 35px;
+  }
+
+  .menu-berger {
+    display: none;
+  }
+}
+
+
+
+@media screen and (max-width:768px) {
+  /* #check{
+    display: block;
+  } */
+
+  .check-btn{
+    display: block;
+  }
+
+  .nav-item {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #161922;
+    top: 75px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+    
+  }
+
+  .left-0{
+    left: 0;
+  }
+
+  .nav-item>ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 65%;
+  }
+
+  .nav-item>ul>li>a {
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .menu-berger{
+    display: flex;
+  }
+
+}
+
+@media screen and (max-width:576px) {
+
+  .logo>h1 {
+    font-size: 27px;
+  }
+
+}
