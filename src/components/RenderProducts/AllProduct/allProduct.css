@@ -28,7 +28,7 @@
 .product-boxes {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .product-card {
@@ -41,6 +41,7 @@
     height: 431px;
     border: 1px solid #ebebeb;
     padding: 30px 18px 22px;
+    margin: 23px 0;
 }
 
 .link-img-product {
@@ -83,6 +84,16 @@
 .score {
     font-size: 12px;
     color: #62666d;
+}
+
+.score p{
+    display: flex;
+    
+}
+
+.score p svg {
+    color: #E8BF33;
+    margin-right: 3px;
 }
 
 .price-card {

@@ -1,21 +1,26 @@
-import './allItems.css'
+import { useDispatch } from "react-redux"
+import { removeCartItem } from "../../../redux/cartSlice"
 
-const AllItems = () => {
+const Item = ({item}) => {
+    const dispatch = useDispatch()
+
+    const handleDelete = (e) => {
+        e.preventDefault()
+        dispatch(removeCartItem(item))
+    }
+
     return (
-        <>
-            <div class="basket-container">
-                <h2>سبد شما (1)</h2>
-                <div class="basket-item">
+        <div class="basket-item">
                     <div class="item-image">
-                        <img src="./images/1410181.jpg" alt="" />
+                        <img src={item.images[0]} alt="" />
                     </div>
                     <div class="item-detail">
                         <div class="item-description">
                             <h2 class="product-name">
-                                اسم محصول---------------
+                                {item.title}
                             </h2>
-                            <h3 class="product-color">رنگ محصول</h3>
-                            <h3 class="product-size">اندازه محصول</h3>
+                            <h3 class="product-color">رنگ محصول: {item.color}</h3>
+                            {/* <h3 class="product-size">اندازه محصول</h3> */}
                         </div>
 
                         <div class="item-cty">
@@ -23,7 +28,7 @@ const AllItems = () => {
                                 <button class="basket-change-quantity decrease-quantity-btn">
                                     +
                                 </button>
-                                <p class="item-quantity">0</p>
+                                <p class="item-quantity">{item.qty}</p>
                                 <button class="basket-change-quantity increase-quantity-btn">
                                     -
                                 </button>
@@ -31,14 +36,12 @@ const AllItems = () => {
                         </div>
 
                         <div class="item-price">
-                            <p>$100</p>
-                            <a href="">حذف کردن</a>
+                            <p>{item.price} تومان</p>
+                            <a href="" onClick={handleDelete}>حذف کردن</a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </>
     )
 }
 
-export default AllItems
+export default Item

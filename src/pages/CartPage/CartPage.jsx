@@ -1,6 +1,6 @@
 import './cartPage.css'
-import AllItems from './../../components/RenderItemsCart/AllItems'
-import TotalPrice from '../../components/RenderItemsCart/TotalPrice'
+import AllItems from './../../components/RenderCartItem/AllItems'
+import TotalPrice from '../../components/RenderCartItem/TotalPrice'
 
 const CartPage = () => {
     return (

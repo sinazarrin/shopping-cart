@@ -68,6 +68,21 @@ header {
   color: #fff;
 }
 
+.basket-icon{
+  position: relative;
+}
+
+.basket-icon span {
+  font-size: 12px;
+    background-color: #2196f3;
+    width: 19px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 14px;
+}
+
 .nav-item {
   display: flex;
 }

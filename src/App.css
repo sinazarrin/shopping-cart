@@ -2,13 +2,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Iransans';
 }
 
 
 body {
   direction: rtl;
   background-color: #F0F0F1;
-  font-family: 'IRANSans';
 }
 
 .main {
