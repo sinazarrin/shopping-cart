@@ -5,11 +5,11 @@ import emptyCart from './empty-cart.jpg'
 import './allItems.css'
 
 const AllItems = () => {
-    const cart = useSelector(state => state.cart)
+    const cart = useSelector(state => state.cart.cartItem)
     const showItem = cart.map(item => {
         return <Item key={item.id} item={item} />
     })
-    // console.log(showItm);
+    
 
     return (
         <>

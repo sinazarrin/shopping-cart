@@ -101,6 +101,7 @@
   color: gray;
   font-size: 12px;
   position: relative;
+  transition: all .5s;
 }
 
 .empty-cart-text a:hover {

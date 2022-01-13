@@ -6,7 +6,7 @@ import './navBar.css'
 const NavBar = () => {
 
     const [statusBurgerMenue, setStatusBurgerMenue] = useState(false)
-    const cart = useSelector(state => state.cart)
+    const cart = useSelector(state => state.cart.cartItem)
 
     return (
         <header>
