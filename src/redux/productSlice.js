@@ -9,13 +9,18 @@ export const fetchProducts = createAsyncThunk("products/productsFetch", async() 
 
 const initialState = {
     status:"idle",
-    items:[]
+    items:[],
+    selectedCategory: 'all'
 }
 
 const productSlice = createSlice({
     name: 'product',
     initialState,
-    reducers: {},
+    reducers: {
+        filterCategory: (state, action) => {
+            state.selectedCategory = action.payload
+        }
+    },
     extraReducers: {
         [fetchProducts.pending]: (state, action) => {
             state.status = 'pending'
@@ -30,4 +35,5 @@ const productSlice = createSlice({
     }
 })
 
+export const {filterCategory} = productSlice.actions
 export default productSlice.reducer

@@ -5,16 +5,22 @@ import Product from '../Product'
 
 const AllProduct = () => {
   const products = useSelector(state => state.products.items)
+  const selectedCategory = useSelector(state => state.products.selectedCategory)
 
-  const showProduct = products.map(product => {
-    return <Product product={product} />
-  })
+  const showProduct = products
+    .filter(product => {
+      if (selectedCategory === 'all') {
+        return product
+      }
+      return selectedCategory === product.category
+    })
+    .map(product => {
+      return <Product key={product.id} product={product} />
+    })
 
   return (
     <div className="product-container">
       <div className="product">
-        <h2 className="product-title">محصولات</h2>
-
         <div className="product-contect">
           <div className="product-boxes">
             {showProduct}
