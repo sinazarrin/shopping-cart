@@ -1,22 +1,25 @@
 import { useState } from "react"
-import { useDispatch } from "react-redux"
-import { decreaseCart, increaseCart, removeCartItem } from "../../../redux/cartSlice"
+import { useDispatch, useSelector } from "react-redux"
+import { decreaseCart, increaseCart, removeCartItem, calcTotalPrice } from "../../../redux/cartSlice"
+import { formatCurrency } from "../../formatCurrency"
 
 const Item = ({ item }) => {
     const dispatch = useDispatch()
-    const [qty, setQty] = useState(1)
 
     const handleDelete = (e) => {
         e.preventDefault()
         dispatch(removeCartItem(item))
+        dispatch(calcTotalPrice())
     }
 
     const handleIncrease = () => {
         dispatch(increaseCart(item))
+        dispatch(calcTotalPrice())
     }
 
     const handleDecrease = () => {
         dispatch(decreaseCart(item))
+        dispatch(calcTotalPrice())
     }
     return (
         <div class="basket-item">
@@ -45,7 +48,7 @@ const Item = ({ item }) => {
                 </div>
 
                 <div class="item-price">
-                    <p>{item.price} تومان</p>
+                    <p>{formatCurrency(item.price * item.qty)}</p>
                     <a href="" onClick={handleDelete}>حذف کردن</a>
                 </div>
             </div>

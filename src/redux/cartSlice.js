@@ -4,6 +4,8 @@ import {
 
 const initialState = {
     cartItem: [],
+    totalQuantity:0,
+    totalPrice:0
 }
 
 const cartSlice = createSlice({
@@ -24,7 +26,13 @@ const cartSlice = createSlice({
         decreaseCart: (state, action) => {
             const item = action.payload
             state.cartItem.map(product => product.id === item.id ? product.qty = product.qty -= 1 : '')
-        }
+        },
+        calcTotalPrice: (state) => {
+            const finalPrice = state.cartItem.reduce((acc, curr) => {
+                return (acc += curr.price * curr.qty);
+            }, 0)
+            state.totalPrice = finalPrice
+        },
     }
 })
 
@@ -32,7 +40,8 @@ export const {
     addToCart,
     removeCartItem,
     increaseCart,
-    decreaseCart
+    decreaseCart,
+    calcTotalPrice
 } = cartSlice.actions
 
 export default cartSlice.reducer

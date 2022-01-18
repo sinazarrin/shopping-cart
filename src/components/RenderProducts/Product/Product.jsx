@@ -1,11 +1,13 @@
 import { useDispatch } from "react-redux"
-import { addToCart } from "../../../redux/cartSlice"
+import { addToCart, calcTotalPrice } from "../../../redux/cartSlice"
+import { formatCurrency } from "../../formatCurrency"
 
 const Product = ({ product }) => {
   const dispatch = useDispatch()
 
   const handleAddToCart = () => {
     dispatch(addToCart(product))
+    dispatch(calcTotalPrice())
   } 
 
   return (
@@ -34,7 +36,7 @@ const Product = ({ product }) => {
         </div>
       </div>
       <div className="price-card">
-        <h3>{product.price} تومان</h3>
+        <h3>{formatCurrency(product.price)}</h3>
       </div>
       <button className="add-to-basket" onClick={handleAddToCart}>اضافه به سبد خرید</button>
     </div>
