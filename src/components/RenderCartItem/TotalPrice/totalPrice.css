@@ -1,6 +1,6 @@
 .basket-summary {
     width: 35%;
-    height: 167px;
+    height: 225px;
     display: flex;
     flex-direction: column;
     border: 1px solid #e5e5e5;
@@ -37,6 +37,25 @@
     cursor: pointer;
   }
 
+  .clear-btn{
+    padding: 13px 16px;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1rem;
+    font-weight: 700;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 6px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all .5s;
+  }
+
+  .clear-btn:hover{
+    background-color: #000;
+    color: #fff;
+  }
   
 @media screen and (max-width:1024px) {
 

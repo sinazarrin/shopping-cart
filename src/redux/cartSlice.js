@@ -33,6 +33,9 @@ const cartSlice = createSlice({
             }, 0)
             state.totalPrice = finalPrice
         },
+        clearCart: (state) => {
+            state.cartItem = []
+        }
     }
 })
 
@@ -41,7 +44,8 @@ export const {
     removeCartItem,
     increaseCart,
     decreaseCart,
-    calcTotalPrice
+    calcTotalPrice,
+    clearCart
 } = cartSlice.actions
 
 export default cartSlice.reducer
