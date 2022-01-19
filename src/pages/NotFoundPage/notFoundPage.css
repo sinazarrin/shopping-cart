@@ -4,13 +4,26 @@
     align-items: center;
     justify-content: center;
     color: rgb(60, 60, 60);
-    min-height: 80vh;
+    min-height: 110vh;
 }
 
-.not-found h2 {
-    font-size: 55px;
+.not-found img {
+    width: 45%;
 }
 
-.not-found p {
-    font-size: 20px;
+.not-found a{
+    color: gray;
+    font-size: 15px;
+    position: relative;
+    transition: all .5s;
+}
+
+.not-found a svg{
+    position: absolute;
+    top: 6px;
+    left: -20px;
+}
+
+.not-found a:hover{
+    color: #2196f3;
 }
