@@ -1,11 +1,10 @@
-import {
-    createSlice
-} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import { toast } from 'react-toastify'
 
 const initialState = {
     cartItem: [],
-    totalQuantity:0,
-    totalPrice:0
+    totalQuantity: 0,
+    totalPrice: 0
 }
 
 const cartSlice = createSlice({
@@ -13,11 +12,21 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action) => {
+            console.log(action.payload);
             state.cartItem.push(action.payload)
+            toast.success(`${action.payload.title} به سبد خرید اضافه شد`, {
+                position: "top-right",
+                autoClose: 2500,
+                // rtl:true
+            })
         },
         removeCartItem: (state, action) => {
             const { id } = action.payload
             state.cartItem = state.cartItem.filter(item => item.id !== id)
+            toast.error('آیتم مورد نظر از سبد شما حذف شد', {
+                position: "top-right",
+                autoClose: 2500,
+            })
         },
         increaseCart: (state, action) => {
             const item = action.payload
@@ -34,6 +43,20 @@ const cartSlice = createSlice({
             state.totalPrice = finalPrice
         },
         clearCart: (state) => {
+            if (state.cartItem.length > 0) {
+                toast.error('سبد خرید خالی شد', {
+                    position: "top-right",
+                    autoClose: 2500,
+                })
+            }
+            state.cartItem = []
+        },submitProducts:(state) => {
+            if (state.cartItem.length > 0) {
+                toast.success('پرداخت با موفقیت انجام شد', {
+                    position: "top-right",
+                    autoClose: 2500,
+                })
+            }
             state.cartItem = []
         }
     }
@@ -45,7 +68,8 @@ export const {
     increaseCart,
     decreaseCart,
     calcTotalPrice,
-    clearCart
+    clearCart,
+    submitProducts
 } = cartSlice.actions
 
 export default cartSlice.reducer
