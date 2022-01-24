@@ -12,7 +12,6 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action) => {
-            console.log(action.payload);
             state.cartItem.push(action.payload)
             toast.success(`${action.payload.title} به سبد خرید اضافه شد`, {
                 position: "top-right",

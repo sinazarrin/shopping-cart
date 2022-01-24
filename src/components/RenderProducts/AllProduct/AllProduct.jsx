@@ -15,7 +15,7 @@ const AllProduct = () => {
       return selectedCategory === product.category
     })
     .map(product => {
-      return <Product key={product.id} product={product} />
+      return <Product key={product.id} product={product} isActive={false}/>
     })
 
   return (

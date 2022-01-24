@@ -1,24 +1,34 @@
-import { useDispatch } from "react-redux"
+import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 import { addToCart, calcTotalPrice } from "../../../redux/cartSlice"
+import { getItem } from "../../../redux/productSlice"
 import { formatCurrency } from "../../formatCurrency"
 
 const Product = ({ product }) => {
   const dispatch = useDispatch()
+  const cartItem = useSelector(state => state.cart.cartItem)
+  const [isActive, setIsActive] = useState(false);
 
   const handleAddToCart = () => {
     dispatch(addToCart(product))
     dispatch(calcTotalPrice())
-  } 
-
+  }
+  
+  useEffect(() => {
+    const isActiveCart = cartItem.find(item => item.id === product.id)
+    isActiveCart ? setIsActive(true) : setIsActive(false)
+  },[cartItem, product.id])
+  
   return (
     <div className="product-card">
-      <a href="#" className="link-img-product">
+      <Link to={`product/${product.id}`} className="link-img-product" onClick={() => dispatch(getItem(product))}>
         <img
           className="image-card"
           src={product.images[0]}
-          alt=""
+          alt={product.title}
         />
-      </a>
+      </Link>
       <div className="description-card">
         <a href="">{product.title}</a>
       </div>
@@ -38,7 +48,7 @@ const Product = ({ product }) => {
       <div className="price-card">
         <h3>{formatCurrency(product.price)}</h3>
       </div>
-      <button className="add-to-basket" onClick={handleAddToCart}>اضافه به سبد خرید</button>
+      <button className={isActive?'disabled-btn':"add-to-basket"} onClick={handleAddToCart} disabled={isActive}>{isActive?'ایتم در سبد شما قرار گرفته': 'اضافه به سبد خرید'}</button>
     </div>
   )
 }

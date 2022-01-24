@@ -11,6 +11,7 @@ import CartPage from './pages/CartPage'
 import AboutUs from './pages/AboutUsPage'
 import Footer from './components/Footer/Footer';
 import NotFoundPage from './pages/NotFoundPage';
+import ProductPage from './pages/ProductPage';
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/blog' element={<BlogPage />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path='/cart' element={<CartPage />}></Route>
+          <Route path="/product/:productId" element={<ProductPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         {/* <Footer /> */}

@@ -133,3 +133,10 @@
     font-size: 13px;
     line-height: 27px;
 }
+
+.disabled-btn{
+    background: #fff;
+    border: 1px solid #2196f3;
+    color: #2196f3;
+    padding: 8px 14px;
+}
