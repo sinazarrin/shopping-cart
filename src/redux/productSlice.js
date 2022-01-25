@@ -6,8 +6,8 @@ export const fetchProducts = createAsyncThunk("products/productsFetch", async() 
     return response
 })
 
-export const fetchSelectProduct = createAsyncThunk("products/fetchSelectProduct", async(id) => {
-    const response = await client.get(`http://localhost:5000/products/?id=${id}`)
+export const fetchSearchProduct = createAsyncThunk("products/fetchSearchProduct", async(search) => {
+    const response = await client.get(`http://localhost:5000/products?q=${search}`)
     return response
 })
 
@@ -16,7 +16,8 @@ const initialState = {
     items:[],
     selectedCategory: 'all',
     selectProduct:{},
-    selectProductStatus: 'idle'
+    selectProductStatus: 'idle',
+    search:''
 }
 
 const productSlice = createSlice({
@@ -26,9 +27,9 @@ const productSlice = createSlice({
         filterCategory: (state, action) => {
             state.selectedCategory = action.payload
         },
-        getItem:(state, action)=>{
-            state.selectProduct = action.payload
-        }
+        updateSearch: (state, action) => {
+            state.search = action.payload
+        },
     },
     extraReducers: {
         [fetchProducts.pending]: (state) => {
@@ -41,15 +42,16 @@ const productSlice = createSlice({
         [fetchProducts.rejected]: (state) => {
             state.status = 'rejected'
         },
-        [fetchSelectProduct.pending]: (state) => {
-            state.selectProductStatus = 'pending'
+        [fetchSearchProduct.pending]: (state) => {
+            state.status = 'pending'
         },
-        [fetchSelectProduct.fulfilled]: (state, action) => {
-            state.selectProductStatus = 'success'
-            state.selectProduct = action.payload
+        [fetchSearchProduct.fulfilled]: (state, action) => {
+            state.items = []
+            state.items.push(...action.payload)
+            state.status = 'success'
         }
     }
 })
 
-export const {filterCategory, getItem} = productSlice.actions
+export const {filterCategory, getItem, updateSearch} = productSlice.actions
 export default productSlice.reducer

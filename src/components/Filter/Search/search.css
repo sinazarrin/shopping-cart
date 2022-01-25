@@ -1,0 +1,39 @@
+.search-banner {
+    display: flex;
+    justify-content: center;
+    padding-top: 45px;
+}
+
+.search-from {
+    position: relative;
+    width: 370px;
+    display: flex;
+}
+
+.search-field {
+    width: 100%;
+    display: block;
+    -webkit-border-radius: 50px;
+    line-height: 50px;
+    height: 42px;
+    padding: 0 20px;
+    font-size: 15px;
+    color: #1e2f38;
+    border: 0;
+    outline: none;
+}
+
+.search-submit {
+    font-size: 25px;
+    color: #00bffe;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    width: 50px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
