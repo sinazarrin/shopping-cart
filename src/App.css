@@ -9,6 +9,7 @@
 body {
   direction: rtl;
   background-color: #F0F0F1;
+  overflow-x: hidden;
 }
 
 .main {

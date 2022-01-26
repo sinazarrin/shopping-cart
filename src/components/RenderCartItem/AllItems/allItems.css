@@ -6,7 +6,6 @@
 
 
 .item-image {
-  padding: 0 15px;
   max-width: 12%;
 }
 
@@ -18,8 +17,10 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 100%;
+  width: 85%;
   padding: 0 15px;
   border-bottom: 1px solid #e5e5e5;
+  justify-content: space-around;
 }
 
 .item-description {
@@ -114,7 +115,58 @@
   left: -20px;
 }
 
-@media screen and (max-width:1024px) {}
+@media screen and (max-width:1024px) {
+  
+
+  .basket-container{
+    width: 73%;
+  }
+
+  .basket {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .basket-item,
+  .item-detail {
+    flex-wrap: nowrap;
+  }
+
+  .product-name{
+    font-size: 12px;
+  }
+  
+  .product-color, .product-size{
+    font-size: 10px;
+  }
+
+  .item-image>img {
+    width: 70px;
+  }
+
+  .content-cty{
+    height: 35px;
+  }
+
+  .item-quantity{
+    font-size: 12px;
+  }
+
+  .basket-change-quantity{
+    width: 36px;
+  }
+
+  .item-price>p{
+    font-size: 14px;
+  }
+  
+  .item-price>a{
+    font-size: 11px;
+  }
+
+  
+}
 
 @media screen and (max-width:768px) {
   .basket {
@@ -127,14 +179,57 @@
     width: 100%;
   }
 
-  .basket-summary {
-    margin-top: 30px;
-    width: 100%;
-  }
+  
 
   .product-color,
   .product-size {
     margin-top: 6px;
+  }
+
+
+
+
+  .basket {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .basket-item,
+  .item-detail {
+    flex-wrap: nowrap;
+  }
+
+  .product-name{
+    font-size: 14px;
+  }
+  
+  .product-color, .product-size{
+    font-size: 10px;
+  }
+
+  .item-image>img {
+    width: 50px;
+  }
+
+  .content-cty{
+    height: 35px;
+  }
+
+  .item-quantity{
+    font-size: 12px;
+  }
+
+  .basket-change-quantity{
+    width: 45px;
+  }
+
+  .item-price>p{
+    font-size: 14px;
+  }
+  
+  .item-price>a{
+    font-size: 11px;
   }
 }
 
@@ -148,5 +243,37 @@
   .basket-item,
   .item-detail {
     flex-wrap: nowrap;
+  }
+
+  .product-name{
+    font-size: 10px;
+  }
+  
+  .product-color, .product-size{
+    font-size: 7px;
+  }
+
+  .item-image>img {
+    width: 50px;
+  }
+
+  .content-cty{
+    height: 31px;
+  }
+
+  .item-quantity{
+    font-size: 12px;
+  }
+
+  .basket-change-quantity{
+    width: 30px;
+  }
+
+  .item-price>p{
+    font-size: 10px;
+  }
+  
+  .item-price>a{
+    font-size: 8px;
   }
 }

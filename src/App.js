@@ -28,7 +28,7 @@ const App = () => {
           <Route path="/product/:productId" element={<ProductPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </>
   )

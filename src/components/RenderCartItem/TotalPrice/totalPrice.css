@@ -58,7 +58,9 @@
   }
   
 @media screen and (max-width:1024px) {
-
+  .basket-summary{
+    width: 60%;
+  }
 }
 
 @media screen and (max-width:768px) {
@@ -95,5 +97,19 @@
 
   .item-description,.item-cty,.item-price{
     padding: 0 10px;
+  }
+
+  .basket-total h2 {
+    font-size: 22px;
+  }
+
+  .selenium-next-step-shipping{
+    padding: 9px 0;
+    font-size: 14px;
+  }
+
+  .clear-btn{
+    padding: 10px 0;
+    font-size: 14px;
   }
 }
