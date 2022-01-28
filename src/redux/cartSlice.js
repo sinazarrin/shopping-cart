@@ -47,16 +47,18 @@ const cartSlice = createSlice({
                     position: "top-right",
                     autoClose: 2500,
                 })
+                state.totalPrice = 0
+                state.cartItem = []
             }
-            state.cartItem = []
         },submitProducts:(state) => {
             if (state.cartItem.length > 0) {
                 toast.success('پرداخت با موفقیت انجام شد', {
                     position: "top-right",
                     autoClose: 2500,
                 })
+                state.totalPrice = 0
+                state.cartItem = []
             }
-            state.cartItem = []
         }
     }
 })

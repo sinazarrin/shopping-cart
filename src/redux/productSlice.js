@@ -27,6 +27,9 @@ const productSlice = createSlice({
         filterCategory: (state, action) => {
             state.selectedCategory = action.payload
         },
+        getItem: (state, action) => {
+            state.selectProduct = action.payload
+        },
         updateSearch: (state, action) => {
             state.search = action.payload
         },
@@ -40,7 +43,7 @@ const productSlice = createSlice({
             state.items = action.payload
         },
         [fetchProducts.rejected]: (state) => {
-            state.status = 'rejected'
+            state.status = 'error'
         },
         [fetchSearchProduct.pending]: (state) => {
             state.status = 'pending'
@@ -49,7 +52,8 @@ const productSlice = createSlice({
             state.items = []
             state.items.push(...action.payload)
             state.status = 'success'
-        }
+        },
+        
     }
 })
 

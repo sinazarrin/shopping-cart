@@ -136,6 +136,12 @@
     padding: 8px 14px;
 }
 
+.loader{
+    display: flex;
+    justify-content: center;
+    margin: 70px 0;
+}
+
 @media screen and (max-width:1200px) {
     .product-boxes {
         justify-content: space-around;

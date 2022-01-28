@@ -1,7 +1,7 @@
 footer{
     background: #111;
     height: auto;
-    width: 100vw;
+    width: 100%;
     padding-top: 40px;
     color: #fff;
 }
@@ -58,7 +58,7 @@ footer{
 
 .footer-button{
     background-color: #000;
-    width: 100vw;
+    width: 100%;
     padding: 20px 0;
     text-align: center;
 }
