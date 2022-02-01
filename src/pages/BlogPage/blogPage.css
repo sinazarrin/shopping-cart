@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 40px;
+    padding: 85px 20px;
 }
 
 .blog-heading{
@@ -57,7 +57,6 @@
     padding: 30px;
     display: flex;
     flex-direction: column;
-    height: 35vh;
 }
 
 .blog-text span {

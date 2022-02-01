@@ -6,7 +6,7 @@ const AboutUs = () => {
         <div>
             <section className="about">
                 <div className="about-content">
-                    <img src={cart} alt="" />
+                    <img src={cart} alt="aboutUs" />
                     <div className="about-text">
                         <h1>درباره ی ما</h1>
                         <h5>طراح & توسعه دهنده</h5>

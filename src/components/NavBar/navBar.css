@@ -182,14 +182,14 @@ header {
     height: 100vh;
     background-color: #161922;
     top: 75px;
-    left: -100%;
+    right: -100%;
     text-align: center;
     transition: all 0.5s;
     
   }
 
-  .left-0{
-    left: 0;
+  .right-0{
+    right: 0;
   }
 
   .nav-item>ul {

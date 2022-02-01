@@ -22,7 +22,7 @@ const cartSlice = createSlice({
         removeCartItem: (state, action) => {
             const { id } = action.payload
             state.cartItem = state.cartItem.filter(item => item.id !== id)
-            toast.error('آیتم مورد نظر از سبد شما حذف شد', {
+            toast.error('محصول مورد نظر از سبد شما حذف شد', {
                 position: "top-right",
                 autoClose: 2500,
             })

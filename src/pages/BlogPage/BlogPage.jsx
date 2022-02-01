@@ -14,7 +14,7 @@ const BlogPage = () => {
                 <div className="blog-container">
                     <div className="blog-box">
                         <div className="blog-img">
-                            <img src={polyester} alt="" />
+                            <img src={polyester} alt="polyester" />
                         </div>
                         <div className="blog-text">
                             <span>23 فروردین 1400</span>
@@ -25,7 +25,7 @@ const BlogPage = () => {
                     </div>
                     <div className="blog-box">
                         <div className="blog-img">
-                            <img src={linen} alt="" />
+                            <img src={linen} alt="linen" />
                         </div>
                         <div className="blog-text">
                             <span>23 فروردین 1400</span>
@@ -38,7 +38,7 @@ const BlogPage = () => {
                     </div>
                     <div className="blog-box">
                         <div className="blog-img">
-                            <img src={sewingFabric} alt="" />
+                            <img src={sewingFabric} alt="sewingFabric" />
                         </div>
                         <div className="blog-text">
                             <span>23 فروردین 1400</span>

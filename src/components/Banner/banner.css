@@ -10,7 +10,8 @@
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
+    padding: 34vh 0;
     background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url('./images/joran-quinten-vtiYZsVmC2A-unsplash.jpg');
     background-size: cover;
 }

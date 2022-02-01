@@ -31,6 +31,7 @@ footer{
 .socials{
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     margin: 1rem 0 3rem 0;
@@ -71,6 +72,6 @@ footer{
 
 .footer-button span{
     text-transform: uppercase;
-    opacity: .4;
+    color: gray;
     font-weight: 200;
 }

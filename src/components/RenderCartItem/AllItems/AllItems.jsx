@@ -18,7 +18,7 @@ const AllItems = () => {
                 {cart.length === 0 ?
                     <>
                         <div className="empty-cart">
-                            <img src={emptyCart} alt="" />
+                            <img src={emptyCart} alt="emptyImage" />
                             <div className="empty-cart-text">
                                 <p>هیچ آیتمی در سبد شما قرار نگرفته :(</p>
                                 <Link to="/">

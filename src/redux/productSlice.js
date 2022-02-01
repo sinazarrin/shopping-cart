@@ -1,13 +1,18 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { client } from "../common/client";
 
-export const fetchProducts = createAsyncThunk("products/productsFetch", async() => {
+export const fetchProducts = createAsyncThunk("product/productsFetch", async() => {
     const response = await client.get('products')
     return response
 })
 
-export const fetchSearchProduct = createAsyncThunk("products/fetchSearchProduct", async(search) => {
-    const response = await client.get(`http://localhost:5000/products?q=${search}`)
+export const fetchSelectProduct = createAsyncThunk("product/fetchSelectProduct", async(id) => {
+    const response = await client.get(`http://localhost:5000/products?id=${id}`)
+    return response
+})
+
+export const fetchSearchProduct = createAsyncThunk("product/fetchSearchProduct", async(search) => {
+    const response = await client.get(`products?q=${search}`)
     return response
 })
 
@@ -15,9 +20,9 @@ const initialState = {
     status:"idle",
     items:[],
     selectedCategory: 'all',
-    selectProduct:{},
+    selectProduct:[],
     selectProductStatus: 'idle',
-    search:''
+    search:'',
 }
 
 const productSlice = createSlice({
@@ -27,8 +32,8 @@ const productSlice = createSlice({
         filterCategory: (state, action) => {
             state.selectedCategory = action.payload
         },
-        getItem: (state, action) => {
-            state.selectProduct = action.payload
+        removeSelectProduct: (state) => {
+            state.selectProduct = []
         },
         updateSearch: (state, action) => {
             state.search = action.payload
@@ -45,6 +50,14 @@ const productSlice = createSlice({
         [fetchProducts.rejected]: (state) => {
             state.status = 'error'
         },
+        [fetchSelectProduct.pending]: (state) => {
+            state.selectProductStatus = 'pending'
+        },
+        [fetchSelectProduct.fulfilled]: (state, action) => {
+            state.selectProductStatus = 'success'
+            state.selectProduct = action.payload
+           
+        },
         [fetchSearchProduct.pending]: (state) => {
             state.status = 'pending'
         },
@@ -57,5 +70,5 @@ const productSlice = createSlice({
     }
 })
 
-export const {filterCategory, getItem, updateSearch} = productSlice.actions
+export const {filterCategory, removeSelectProduct, updateSearch} = productSlice.actions
 export default productSlice.reducer

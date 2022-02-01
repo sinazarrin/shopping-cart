@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { addToCart, calcTotalPrice } from "../../../redux/cartSlice"
-import { fetchSelectProduct, getItem } from "../../../redux/productSlice"
+import { fetchSelectProduct } from "../../../redux/productSlice"
 import { formatCurrency } from "../../formatCurrency"
 
 const Product = ({ product }) => {
@@ -22,7 +22,7 @@ const Product = ({ product }) => {
   
   return (
     <div className="product-card">
-      <Link to={`product/${product.id}`} className="link-img-product" onClick={() => dispatch(getItem(product))}>
+      <Link to={`product/${product.id}`} className="link-img-product">
         <img
           className="image-card"
           src={product.images[0]}

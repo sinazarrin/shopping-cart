@@ -1,6 +1,6 @@
 import './totalPrice.css'
 import { useSelector } from 'react-redux'
-import {formatCurrency} from '../../formatCurrency'
+import { formatCurrency } from '../../formatCurrency'
 import { useDispatch } from 'react-redux'
 import { clearCart, submitProducts } from '../../../redux/cartSlice'
 
@@ -22,8 +22,8 @@ const TotalPrice = () => {
                 <h2>قیمت کل</h2>
                 <span>{formatCurrency(totalPrice)}</span>
             </div>
-            <button class="selenium-next-step-shipping" onClick={handleSubmit}>ادامه فرایند خرید</button>
-            <button className="clear-btn" onClick={handleClearBtn}>سبد خریدتو خالی کن</button>
+            <button class="selenium-next-step-shipping" onClick={handleSubmit}>تکمیل فرایند خرید</button>
+            <button className="clear-btn" onClick={handleClearBtn}>سبد خریدت رو خالی کن</button>
         </div>
     )
 }
