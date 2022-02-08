@@ -26,7 +26,6 @@ const ProductPage = () => {
   }
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     dispatch(fetchSelectProduct(productId))
     return () => {
       dispatch(removeSelectProduct())
@@ -38,6 +37,7 @@ const ProductPage = () => {
     dispatch(addToCart(products))
   }
   useEffect(() => {
+    window.scrollTo(0, 0);
     const isActiveItem = cartItem.find(item => item.id === products.id)
     isActiveItem ? setIsActive(true) : setIsActive(false)
   }, [cartItem, products.id]);
@@ -53,25 +53,25 @@ const ProductPage = () => {
 
     <>
       {
-        products.map(item => (
+        // products.map(products => (
           <div className="product-details">
             <div className="details">
               <div className="big-img">
-                <img src={item.images[allIndex]} alt="" />
+                <img src={products.images[allIndex]} alt="" />
               </div>
               <div className="box">
 
                 <div className="row">
-                  <h3>{item.title}</h3>
-                  <span>{formatCurrency(item.price)}</span>
+                  <h3>{products.title}</h3>
+                  <span>{formatCurrency(products.price)}</span>
                 </div>
 
-                <p>{item.description}</p>
-                <p>رنگ محصول: {item.color}</p>
+                <p>{products.description}</p>
+                <p>رنگ محصول: {products.color}</p>
 
                 <div className="thumb">
                   {
-                    item.images.map((img, index) => (
+                    products.images.map((img, index) => (
                       <img src={img}  alt="" key={index} onClick={() => handleTab(index)} className={index == allIndex ? 'opacity-none' : 'mini-image'}/>
                     ))
                   }
@@ -80,7 +80,7 @@ const ProductPage = () => {
               </div>
             </div>
           </div>
-        ))
+        // ))
       }
     </>
   )

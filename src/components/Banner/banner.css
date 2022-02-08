@@ -113,6 +113,10 @@
 
 @media screen and (max-width:375px){
     .title-banner{
-        font-size: 4rem;
+        font-size: 3.5rem;
+    }
+
+    .subTitle-banner{
+        font-size: 13px;
     }
 }

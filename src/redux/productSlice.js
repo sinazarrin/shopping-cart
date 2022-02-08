@@ -55,7 +55,9 @@ const productSlice = createSlice({
         },
         [fetchSelectProduct.fulfilled]: (state, action) => {
             state.selectProductStatus = 'success'
-            state.selectProduct = action.payload
+                
+                
+                action.payload.map(item => state.selectProduct = item )
            
         },
         [fetchSearchProduct.pending]: (state) => {
